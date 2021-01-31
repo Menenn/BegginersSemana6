@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://www.flaticon.com/svg/vstatic/svg/752/752326.svg?token=exp=1612126374~hmac=fe34d1ada4050ad1a8ec6d8ce2e7c77d" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="global.css">
+    <title>Cadastro de Funcionários</title>
+</head>
+<body>
+    <header>
+        <p>Registro de funcionários</p>
+    </header>
+    <div id="all">
+    <div>
+        <p>Digite os dados do funcionário</p>
+        <input type="text" placeholder="Nome do Funcionário" id="nome">
+        <input type="text" placeholder="CPF" id="cpf" onchange="ValidaCPF()" maxlength="14" onkeydown="javascript: fMasc( this, mCPF );">
+        <input type="text" placeholder="RG" id="rg" maxlength="12" onkeypress="mascara (this, '##.###.###-#')" onchange="validarrg()">
+        <input type="date" placeholder="Data de Nascimento" id="datanasc">
+        <select name="select" id="tipocnh">
+            <option value="" disabled selected>Selecione a Habilitação</option>
+            <option value="Tipo A">Tipo A</option>
+            <option value="Tipo B">Tipo B</option>
+        </select>
+        <select name="select" id="estadocivil">
+            <option value="" disabled selected>Selecione o Estado Civil</option>
+            <option value="Solteiro">Solteiro(a)</option>
+            <option value="Casado">Casado(a)</option>
+            <option value="Viuvo">Viuvo(a)</option>
+            <option value="Separado">Separado Judicialmente</option>
+            <option value="Divorciado">Divorciado</option>
+        </select>
+        <input type="text" placeholder="CEP" id="cep" onchange="validarcep(); getDadosEnderecoCEP(this.value)" maxlength="9" onkeypress="mascara(this, '#####-###')">
+        <input type="text" placeholder="Rua" id="rua">
+        <input type="text" placeholder="Bairro" id="bairro">
+        <input type="text" placeholder="Cidade" id="cidade">
+        <input type="text" placeholder="Estado" id="estado">
+        <input type="text" placeholder="Número" id="num">
+        <input type="text" placeholder="Complemento" id="comp">
+    </div>
+    <button id="enviar" onclick="checarcampos()">Enviar</button>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
